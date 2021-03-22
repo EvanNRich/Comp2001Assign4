@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * This class represents courses offered by a university
  *
  * @author Evan Rich
- * @version (a version number or a date)
+ * @version March 22 2021
  */
 public class Course
 {

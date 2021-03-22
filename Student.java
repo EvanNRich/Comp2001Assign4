@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 /**
- * Write a description of class Student here.
+ * This class represents students of a university
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Evan Rich
+ *         Jasjeet Singh
+ * @version March 22 2021
  */
 public class Student
 {
@@ -39,6 +40,9 @@ public class Student
         course.studentsInCourse.add(this);
     }
     
+    /**
+     * Prints the name and ID of every student in the specified department and prints every course each student is enrolled in
+     */
     public void printStudentsInDepartment(String department)
     {
         for(Student student : allStudents)
@@ -53,5 +57,34 @@ public class Student
                 }
             }
         }
+    }
+    
+    /**
+     * Drops the specified course for the student 
+     * The course is removed from the student's list of courses and student is removed from the course's list of students
+     */
+    public void dropCourse(Course course)
+    {
+        coursesEnrolledIn.remove(course);
+        course.studentsInCourse.remove(this);
+        grades.remove(course);
+    }
+    
+    /**
+     * Sets the grade for the specified course
+     */
+    public void setGrade(Course course, int grade)
+
+    {
+      grades.put(course,grade);
+    }
+    
+    /**
+     * Returns the grade for the specified course
+     */
+    public int getGrade(Course course)
+
+    {
+        return grades.get(course);
     }
 }
